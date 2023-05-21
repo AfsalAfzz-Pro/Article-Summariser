@@ -1,0 +1,281 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+  Note: The styles for this gradient grid background is heavily inspired by the creator of this amazing site (https://dub.sh) – all credits go to them! 
+*/
+
+.main {
+  width: 100vw;
+  min-height: 100vh;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  padding: 120px 24px 160px 24px;
+  pointer-events: none;
+}
+
+.main:before {
+  background: radial-gradient(circle, rgba(2, 0, 36, 0) 0, #fafafa 100%);
+  position: absolute;
+  content: "";
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+
+.main:after {
+  content: "";
+  background-image: url("/src/assets/grid.svg");
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  opacity: 0.4;
+  filter: invert(1);
+}
+
+.gradient {
+  height: -moz-fit-content; /* For Firefox */
+  height: fit-content; /* For other browsers */
+  z-index: 3;
+  width: 100%;
+  max-width: 640px;
+  background-image: radial-gradient(
+      at 27% 37%,
+      hsla(215, 98%, 61%, 1) 0px,
+      transparent 0%
+    ),
+    radial-gradient(at 97% 21%, hsla(125, 98%, 72%, 1) 0px, transparent 50%),
+    radial-gradient(at 52% 99%, hsla(354, 98%, 61%, 1) 0px, transparent 50%),
+    radial-gradient(at 10% 29%, hsla(256, 96%, 67%, 1) 0px, transparent 50%),
+    radial-gradient(at 97% 96%, hsla(38, 60%, 74%, 1) 0px, transparent 50%),
+    radial-gradient(at 33% 50%, hsla(222, 67%, 73%, 1) 0px, transparent 50%),
+    radial-gradient(at 79% 53%, hsla(343, 68%, 79%, 1) 0px, transparent 50%);
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  filter: blur(100px) saturate(150%);
+  top: 80px;
+  opacity: 0.15;
+}
+
+@media screen and (max-width: 640px) {
+  .main {
+    padding: 0;
+  }
+}
+
+/* Tailwind Styles */
+
+.app {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 7xl;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+@media (min-width: 640px) {
+  .app {
+    padding: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .app {
+    max-width: none;
+    width: 85%;
+  }
+}
+
+
+.black_btn {
+  border-radius: 9999px;
+  border: 2px solid black;
+  background-color: black;
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  font-size: 0.875rem;
+  color: white;
+  transition: all 0.3s;
+}
+
+.black_btn:hover {
+  background-color: white;
+  color: black;
+}
+
+
+.head_text {
+  margin-top: 1.25rem; /* equivalent to mt-5 */
+  font-size: 3rem; /* equivalent to text-5xl */
+  font-weight: 800; /* equivalent to font-extrabold */
+  line-height: 1.15; /* equivalent to leading-[1.15] */
+  color: #000000; /* equivalent to text-black */
+  text-align: center; /* equivalent to text-center */
+
+  /* media query for screens larger than or equal to 640px */
+  @media (min-width: 640px) {
+    font-size: 3.75rem; /* equivalent to sm:text-6xl */
+  }
+}
+
+
+.orange_gradient {
+  background-image: linear-gradient(to right, #FFC107, #FFA500, #FFD700);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: orange;
+}
+
+.desc {
+  margin-top: 5px;
+  font-size: 1.125rem;
+  color: #718096;
+  text-align: center;
+  max-width: 42rem;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(to right, #667eea, #764ba2, #6b8cce, #b8d3fe);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+
+@layer base {
+  .font-satoshi {
+    font-family: 'Satoshi', sans-serif;
+  }
+}
+@layer base {
+  @font-face {
+    font-family: 'Satoshi';
+    src: url('/path/to/satoshi-font-file.woff2') format('woff2'),
+         url('/path/to/satoshi-font-file.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  .font-satoshi {
+    font-family: 'Satoshi', sans-serif;
+  }
+}
+
+
+.url_input {
+  display: block;
+  width: 100%;
+  border-radius: 0.375rem;
+  border: 0.0625rem solid #cbd5e0;
+  background-color: #ffffff;
+  padding-top: 0.625rem;
+  padding-right: 1.875rem;
+  padding-bottom: 0.625rem;
+  padding-left: 2.5rem;
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 500;
+  font-size: 0.875rem;
+  box-shadow: 0 0.125rem 0.25rem 0 rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
+.url_input:focus {
+  border-color: #000000;
+  box-shadow: 0 0 0 0.125rem rgba(0, 0, 0, 0.1);
+}
+
+
+.submit_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  font-family: sans-serif;
+  font-size: 1.1em;
+  font-weight: 500;
+  color: #fff;
+  background-color: #171717;
+  padding: 0.7em 1.7em;
+  cursor: pointer;
+  transition: all .4s;
+  box-shadow: 6px 6px 12px #c5c5c5,
+             -6px -6px 12px #ffffff;
+}
+ 
+
+.submit_btn:hover { 
+  border-radius: 5px;
+  transform: translateY(-10px);
+  box-shadow: 0 7px 0 -2px #f85959,
+   0 15px 0 -4px #39a2db,
+   0 16px 10px -3px #39a2db;
+} 
+
+.submit_btn:active {
+  transition: all 0.2s;
+ transform: translateY(-5px);
+ box-shadow: 0 2px 0 -2px #f85959,
+  0 8px 0 -4px #39a2db,
+  0 12px 10px -3px #39a2db;
+}
+
+
+.link_card {
+  padding: 0.75rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  background-color: white;
+  border: 1px solid gray;
+  gap: 0.75rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.copy_btn {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 -0.3125rem 0.9375rem -0.625rem rgba(199, 199, 199, 0.2);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+
+.blue_gradient {
+  font-weight: 900;
+  background-image: linear-gradient(to right, #3B82F6, #10B981);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+
+.summary_box {
+  border: 1px solid #ccc;
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: inset 10px -50px 94px 0 rgba(199, 199, 199, 0.2);
+  padding: 1rem;
+}
