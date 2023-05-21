@@ -199,31 +199,40 @@
 
 
 .submit_btn {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  left: 10;
-  transform: translateY(-50%);
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2.7rem;
-  height: 2.7rem;
-  border-radius: 0.25rem;
-  border: 1px solid #cbd5e0;
+  width: 130px;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
   font-family: sans-serif;
-  font-size: 0.869rem;
+  font-size: 1.1em;
   font-weight: 500;
-  color: #1f69ca;
-  background-color: transparent;
-  transition: border-color 0.15s ease-in-out, color 0.15s ease-in-out;
+  color: #fff;
+  background-color: #171717;
+  padding: 0.7em 1.7em;
+  cursor: pointer;
+  transition: all .4s;
+  box-shadow: 6px 6px 12px #c5c5c5,
+             -6px -6px 12px #ffffff;
 }
+ 
 
+.submit_btn:hover { 
+  border-radius: 5px;
+  transform: translateY(-10px);
+  box-shadow: 0 7px 0 -2px #f85959,
+   0 15px 0 -4px #39a2db,
+   0 16px 10px -3px #39a2db;
+} 
 
-
-.submit_btn:hover {
-  border-color: #2671e0;
-  color: #0e5fd9;
+.submit_btn:active {
+  transition: all 0.2s;
+ transform: translateY(-5px);
+ box-shadow: 0 2px 0 -2px #f85959,
+  0 8px 0 -4px #39a2db,
+  0 12px 10px -3px #39a2db;
 }
 
 

@@ -4,6 +4,7 @@ import Hero from './components/Hero'
 import Demo from './components/Demo'
 
 import './App.css';
+import './satoshi.css';
 
 const App = () => {
   return (

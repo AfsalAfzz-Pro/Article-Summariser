@@ -18,7 +18,7 @@ const Hero = () => {
     </nav>
 
     <h1 className='head_text'>
-      Summarize Notes with <br />
+      Summarize Articles with <br />
       <span className='orange_gradient'>ANNE AI</span>
     </h1>
     <h2 className='desc'>
